@@ -6,10 +6,10 @@ import mongoImage from '../assets/about/mongodb.png';
 
 const About = () => {
   return (
-    <section className="bg-[#ff2a2a] pt-20 pb-40 px-6 md:px-12 w-full relative overflow-hidden font-sans">
+    <section id="about" className="bg-[#ff2a2a] pt-20 pb-40 px-6 md:px-12 w-full relative overflow-hidden font-sans">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-16 items-start">
         
-        {/* Left Side: ID Badge and Skills */}
+        {/* Left Side: ID Badge */}
         <div className="flex flex-col items-center w-full md:w-[350px] shrink-0 mt-12 md:mt-0">
           
           <div data-aos="drop-bounce" className="relative flex justify-center w-full">
@@ -28,25 +28,59 @@ const About = () => {
               <div className="w-full aspect-[3/4] overflow-hidden rounded-xl bg-gray-800 border-2 border-transparent">
                 <img 
                   src={stackImage} 
-                  alt="Profile" 
+                  alt="Jagadeesh Sappa" 
                   className="w-full h-full object-cover"
                 />
+              </div>
+              {/* Name Badge Below Image */}
+              <div className="mt-3 text-center pb-2">
+                <h3 className="text-white text-lg font-black tracking-tight">Jagadeesh Sappa</h3>
+                <p className="text-gray-400 text-xs font-semibold tracking-wider uppercase mt-1">ECE & Quantum Dev</p>
               </div>
             </div>
           </div>
 
         </div>
 
-        {/* Right Side: Info Content */}
+        {/* Right Side: About Me Content */}
         <div data-aos="fade-left" data-aos-delay="200" className="flex-1 text-white mt-8 md:mt-0 relative z-20">
           
-          <h2 className="text-4xl md:text-5xl font-black text-black mb-4">Hello!</h2>
-          <p className="text-lg font-bold mb-12 leading-relaxed max-w-3xl text-red-50">
-            Hi, my name is <span className="text-black text-xl font-black mx-1 tracking-wide uppercase">Leeshark</span>, a passionate full-stack developer based in [Location], dedicated to crafting clean, functional, and highly scalable web applications.
+          <h2 className="text-4xl md:text-5xl font-black text-black mb-4">About Me</h2>
+          
+          <p className="text-lg font-bold mb-6 leading-relaxed max-w-3xl text-red-50">
+            Hi, I'm <span className="text-black text-xl font-black mx-1 tracking-wide uppercase">Jagadeesh Sappa</span> — an Electronics & Communication Engineering student at BVC College of Engineering, Rajahmundry. I'm deeply passionate about quantum computing, embedded systems, and full-stack development.
           </p>
 
-          {/* Horizontal Skills Row (Transparent & Large) */}
-          <div className="flex items-center gap-10 mt-8">
+          <p className="text-base font-medium mb-6 leading-relaxed max-w-3xl text-red-100">
+            I won <span className="text-black font-bold">1st Place</span> at the Amaravathi Quantum Valley Hackathon 2025 (AQVH) — competing among 120+ teams nationally — where I built <span className="text-black font-bold">Bloch Verse</span>, a quantum state visualizer using Qiskit and OpenQASM 2.0. I'm also a published researcher with a peer-reviewed paper on quantum state visualization in the APSHES Journal, 2025.
+          </p>
+
+          <p className="text-base font-medium mb-8 leading-relaxed max-w-3xl text-red-100">
+            My expertise bridges the gap between ECE hardware fundamentals — VLSI, FPGA architecture, power electronics — and modern software development with Python, JavaScript, Node.js, and React. I'm eager to contribute to cutting-edge quantum computing and embedded systems projects.
+          </p>
+
+          {/* Quick Info Cards */}
+          <div className="grid grid-cols-2 gap-4 mb-8 max-w-md">
+            <div className="bg-black/20 backdrop-blur-sm rounded-xl p-4 border border-white/10">
+              <p className="text-xs text-red-200 font-bold uppercase tracking-wider mb-1">Location</p>
+              <p className="text-white font-bold text-sm">East Godavari, AP</p>
+            </div>
+            <div className="bg-black/20 backdrop-blur-sm rounded-xl p-4 border border-white/10">
+              <p className="text-xs text-red-200 font-bold uppercase tracking-wider mb-1">Education</p>
+              <p className="text-white font-bold text-sm">B.Tech ECE</p>
+            </div>
+            <div className="bg-black/20 backdrop-blur-sm rounded-xl p-4 border border-white/10">
+              <p className="text-xs text-red-200 font-bold uppercase tracking-wider mb-1">Focus</p>
+              <p className="text-white font-bold text-sm">Quantum & VLSI</p>
+            </div>
+            <div className="bg-black/20 backdrop-blur-sm rounded-xl p-4 border border-white/10">
+              <p className="text-xs text-red-200 font-bold uppercase tracking-wider mb-1">Languages</p>
+              <p className="text-white font-bold text-sm">Telugu, English, Hindi</p>
+            </div>
+          </div>
+
+          {/* Tech Stack Icons */}
+          <div className="flex items-center gap-10 mt-4">
             <img 
               data-aos="zoom-in" data-aos-delay="300"
               src={reactImage} 

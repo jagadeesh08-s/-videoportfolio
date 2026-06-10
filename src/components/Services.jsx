@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { motion, useScroll, useSpring, useMotionValueEvent } from 'framer-motion';
 
-const TagCard = ({ number, title, text, className, aosDelay, aosType, pathLength, containerRef }) => {
+const TagCard = ({ number, title, text, techStack, className, aosDelay, aosType, pathLength, containerRef }) => {
   const ref = useRef(null);
   const [isActive, setIsActive] = useState(false);
 
@@ -40,7 +40,7 @@ const TagCard = ({ number, title, text, className, aosDelay, aosType, pathLength
       </div>
       
       {/* Inner container */}
-      <div className={`w-full h-full rounded-[1.5rem] mt-8 p-8 flex flex-col min-h-[220px] transition-colors duration-700 ${
+      <div className={`w-full h-full rounded-[1.5rem] mt-8 p-8 flex flex-col min-h-[260px] transition-colors duration-700 ${
         isActive ? 'bg-red-700/50' : 'bg-[#f4f4f4]'
       }`}>
         <span className={`text-xl font-bold mb-2 font-serif italic transition-colors duration-700 ${
@@ -51,11 +51,29 @@ const TagCard = ({ number, title, text, className, aosDelay, aosType, pathLength
           isActive ? 'text-white' : 'text-gray-900'
         }`}>{title}</h3>
         
-        <p className={`text-sm leading-relaxed font-medium transition-colors duration-700 ${
+        <p className={`text-sm leading-relaxed font-medium transition-colors duration-700 mb-4 ${
           isActive ? 'text-red-100' : 'text-gray-500'
         }`}>
           {text}
         </p>
+
+        {/* Tech Stack Tags */}
+        {techStack && (
+          <div className="flex flex-wrap gap-2 mt-auto">
+            {techStack.map((tech, i) => (
+              <span 
+                key={i}
+                className={`text-[10px] font-bold px-2.5 py-1 rounded-full transition-colors duration-700 ${
+                  isActive 
+                    ? 'bg-white/20 text-white border border-white/30' 
+                    : 'bg-gray-200 text-gray-600 border border-gray-300'
+                }`}
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
@@ -82,10 +100,10 @@ const Services = () => {
         {/* Header Content */}
         <div data-aos="fade-up" className="md:absolute top-10 left-0 md:w-[450px] z-20 mb-16 md:mb-0">
           <div className="inline-block border border-gray-300 rounded-full px-5 py-1.5 text-sm text-gray-600 font-bold mb-8 shadow-sm bg-white">
-            How we work
+            Featured Projects
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 leading-[1.1] mb-6 tracking-tight relative">
-            Let us show you how we drive your brand to new heights
+            From quantum circuits to full-stack applications
             {/* Hand-drawn arrow */}
             <svg className="absolute -bottom-10 right-10 w-12 h-12 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" className="hidden" />
@@ -93,7 +111,7 @@ const Services = () => {
             </svg>
           </h2>
           <p className="text-gray-500 text-base md:text-lg max-w-sm font-medium leading-relaxed">
-            We follow a structured, creative, and highly technical approach to turn your ideas into robust full-stack applications.
+            Building at the intersection of quantum computing, embedded systems, and modern web technologies.
           </p>
         </div>
 
@@ -175,8 +193,9 @@ const Services = () => {
           
           <TagCard 
             number="01"
-            title="Define"
-            text="We start by understanding your goals, user requirements, and technical constraints to lay a rock-solid foundation for the project."
+            title="Bloch Verse"
+            text="Quantum state visualizer built with Qiskit — simulated circuits up to 9,000+ gates, real-time statevector extraction with interactive Bloch sphere visualization. Validated on IBM Quantum Composer."
+            techStack={["Qiskit", "OpenQASM 2.0", "IBM Quantum", "Python"]}
             className="md:absolute md:top-[10px] md:right-[5%] lg:right-[10%] rotate-2 md:rotate-6"
             aosType="fade-left"
             aosDelay="100"
@@ -186,8 +205,9 @@ const Services = () => {
 
           <TagCard 
             number="02"
-            title="Design"
-            text="Creating intuitive, pixel-perfect user interfaces and wireframes that guarantee an engaging and accessible user experience."
+            title="E-RISHWA"
+            text="Solar-powered electric auto rickshaw with MPPT-based charging, DC-DC converter design, and energy management system. Improved vehicle range by 30% through optimized power electronics."
+            techStack={["Power Electronics", "Embedded Systems", "MPPT", "Energy Mgmt"]}
             className="md:absolute md:top-[450px] md:left-[5%] lg:left-[10%] -rotate-2 md:-rotate-6"
             aosType="fade-right"
             aosDelay="200"
@@ -197,8 +217,9 @@ const Services = () => {
 
           <TagCard 
             number="03"
-            title="Build"
-            text="Developing scalable frontend architectures and secure backend systems using the latest modern tech stack."
+            title="Research Paper"
+            text="Published peer-reviewed paper on quantum state visualization framework — Qiskit-based simulation pipeline with 3D visualization for superposition, phase, and entanglement states. APSHES Journal, 2025."
+            techStack={["Qiskit", "3D Visualization", "Statevector", "Research"]}
             className="md:absolute md:top-[700px] md:right-[5%] lg:right-[15%] rotate-1 md:rotate-3"
             aosType="fade-left"
             aosDelay="300"
@@ -208,8 +229,9 @@ const Services = () => {
 
           <TagCard 
             number="04"
-            title="Launch"
-            text="Rigorous testing, optimization, and seamless deployment to cloud infrastructure, followed by ongoing support."
+            title="Circuit Design"
+            text="Academic portfolio of analog & digital circuit designs — regulated DC power supplies, op-amp signal conditioning, digital counters with flip-flops, and RC filter frequency analysis."
+            techStack={["Analog/Digital", "Signal Processing", "Op-Amp", "Filters"]}
             className="md:absolute md:top-[1050px] md:left-[15%] lg:left-[25%] -rotate-1 md:-rotate-3"
             aosType="fade-right"
             aosDelay="400"
@@ -223,7 +245,7 @@ const Services = () => {
             data-aos-delay="600"
             className="hidden md:block absolute top-[1250px] left-[60%] font-['Caveat',cursive] text-3xl text-gray-600 rotate-6"
           >
-            Ready to be delivered!
+            More coming soon!
           </div>
 
         </div>

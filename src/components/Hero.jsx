@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 // Adjusted import path for the video
-import heroVideo from '../assets/hero video/Developer_introduces_self_and_sk…_202606051918.mp4';
+import heroVideo from '../assets/hero video/WhatsApp Video 2026-06-10 at 10.47.25 AM.mp4';
 
 const Hero = () => {
   const videoRef = useRef(null);
@@ -55,7 +55,7 @@ const Hero = () => {
             data-aos="fade-up"
             className="text-white text-3xl md:text-5xl font-bold mb-4 tracking-tight"
           >
-            Hi, I’m a <br /> <span className="text-transparent [-webkit-text-stroke:1.5px_black]">Full Stack Developer</span>
+            Hi, I'm <span className="text-transparent [-webkit-text-stroke:1.5px_black]">Jagadeesh Sappa</span>
           </h1>
 
           {/* Subheading */}
@@ -64,7 +64,7 @@ const Hero = () => {
             data-aos-delay="200"
             className="text-white text-sm md:text-lg font-semibold mb-8 max-w-md drop-shadow-md"
           >
-            I build fast, scalable and modern web applications using React, Node.js and Tailwind CSS.
+            ECE & Quantum Computing Enthusiast — 1st Place Winner at AQVH 2025. I design quantum circuits, build interactive visualizers, and craft full-stack applications.
           </p>
 
           {/* Buttons */}
@@ -75,7 +75,7 @@ const Hero = () => {
           >
             {/* Primary Button */}
             <button className="px-4 py-2 md:px-6 md:py-2 text-xs md:text-base rounded-full bg-white text-black font-semibold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-md">
-              View My Work
+              View Projects
             </button>
             
             {/* Secondary Button - Glassmorphism style */}
