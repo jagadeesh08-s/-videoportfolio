@@ -82,6 +82,18 @@ const Hero = () => {
             <button className="px-4 py-2 md:px-6 md:py-2 text-xs md:text-base rounded-full bg-black/40 border border-white text-white font-semibold hover:bg-black/60 transition-all duration-300 backdrop-blur-md">
               Contact Me
             </button>
+
+            {/* Download Resume Button */}
+            <a 
+              href="/resume.pdf" 
+              download="Jagadeesh_Sappa_Resume.pdf" 
+              className="px-4 py-2 md:px-6 md:py-2 text-xs md:text-base rounded-full bg-[#ff2a2a] text-white font-semibold hover:bg-red-600 transition-all duration-300 transform hover:scale-105 shadow-[0_0_15px_rgba(255,42,42,0.4)] flex items-center gap-2 border border-[#ff2a2a]"
+            >
+              <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+              </svg>
+              Download Resume
+            </a>
           </div>
         </div>
 
