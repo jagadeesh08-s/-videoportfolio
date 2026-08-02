@@ -46,14 +46,15 @@ const Contact = () => {
     <section ref={ref} id="contact" className="bg-[#0a0a0a] w-full min-h-screen relative overflow-hidden flex items-end pt-32 pb-0 md:pb-0 border-t border-gray-900">
       <motion.div 
         style={{ y }}
+        aria-hidden="true"
         className="absolute top-0 left-0 w-full h-full flex flex-col justify-start items-center overflow-hidden pointer-events-none z-0 pt-16 md:pt-12"
       >
-        <h1 
+        <span 
           className="text-[25vw] leading-[0.75] font-black text-white uppercase tracking-tighter select-none scale-y-[1.6] origin-top"
           style={{ fontFamily: "'Impact', 'Arial Black', sans-serif" }}
         >
           Contact
-        </h1>
+        </span>
       </motion.div>
 
       <div className="relative z-10 w-full flex justify-end items-end">
@@ -61,9 +62,9 @@ const Contact = () => {
           data-aos="fade-up"
           className="bg-[#ff2a2a] w-full md:w-[85%] lg:w-[75%] p-8 md:p-16 text-white flex flex-col justify-between"
         >
-          <div className="text-xs font-bold tracking-[0.2em] mb-12 md:mb-20 uppercase opacity-90">
+          <h2 id="contact-heading" className="text-xs font-bold tracking-[0.2em] mb-12 md:mb-20 uppercase opacity-90">
             Get In Touch
-          </div>
+          </h2>
 
           {submitStatus === 'success' && (
             <div className="mb-8 p-4 rounded-xl bg-green-500/20 border border-green-400/40 text-green-100 font-bold text-sm flex items-center gap-3">
@@ -82,7 +83,7 @@ const Contact = () => {
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="flex flex-col gap-12 md:gap-16 w-full">
+          <form onSubmit={handleSubmit} aria-labelledby="contact-heading" className="flex flex-col gap-12 md:gap-16 w-full">
             <input type="hidden" name="access_key" value="02fcb325-40c2-4448-856b-1f2950033c88" />
             <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
             <input type="hidden" name="subject" value="New message from your Portfolio" />
@@ -95,6 +96,8 @@ const Contact = () => {
                     type="text" 
                     name="name"
                     id="contactName" 
+                    aria-label="Your Full Name"
+                    autoComplete="name"
                     placeholder="Your Name" 
                     required
                     className="w-full bg-transparent border-b border-white/40 pb-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-white font-medium rounded-none"
@@ -105,6 +108,8 @@ const Contact = () => {
                     type="email" 
                     name="email"
                     id="contactEmail" 
+                    aria-label="Your Email Address"
+                    autoComplete="email"
                     placeholder="Your Email" 
                     required
                     className="w-full bg-transparent border-b border-white/40 pb-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-white font-medium rounded-none"
@@ -112,9 +117,11 @@ const Contact = () => {
                 </div>
                 <div className="relative">
                   <input 
-                    type="text" 
+                    type="tel" 
                     name="phone"
                     id="contactPhone" 
+                    aria-label="Your Phone Number (optional)"
+                    autoComplete="tel"
                     placeholder="Phone (optional)" 
                     className="w-full bg-transparent border-b border-white/40 pb-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-white font-medium rounded-none"
                   />
@@ -126,6 +133,7 @@ const Contact = () => {
                   <textarea 
                     name="message"
                     id="contactMessage" 
+                    aria-label="Your Message"
                     placeholder="Type your message here" 
                     required
                     className="w-full h-full min-h-[120px] bg-transparent border-b border-white/40 pb-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-white font-medium resize-none rounded-none"

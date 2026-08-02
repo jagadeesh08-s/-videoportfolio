@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#111111] text-[#d4d4d4] py-16 px-6 md:px-12 w-full font-mono text-[10px] md:text-xs tracking-widest flex flex-col justify-between min-h-[50vh]">
+    <footer role="contentinfo" className="bg-[#111111] text-[#d4d4d4] py-16 px-6 md:px-12 w-full font-mono text-[10px] md:text-xs tracking-widest flex flex-col justify-between min-h-[50vh]">
       
       {/* Top Row */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 w-full font-medium">
@@ -42,8 +42,8 @@ const Footer = () => {
         <div className="flex flex-col gap-2 md:items-center">
           <a href="mailto:sappsjagadeesh@gmail.com" className="underline hover:text-white transition-colors underline-offset-4 decoration-1 lowercase">sappsjagadeesh@gmail.com</a>
           <div className="flex gap-4 mt-2">
-            <a href="https://github.com/jagadeesh08-s" target="_blank" rel="noopener noreferrer" className="underline hover:text-white transition-colors underline-offset-4 decoration-1">GitHub</a>
-            <a href="https://linkedin.com/in/jagadeesh-sappa" target="_blank" rel="noopener noreferrer" className="underline hover:text-white transition-colors underline-offset-4 decoration-1">LinkedIn</a>
+            <a href="https://github.com/jagadeesh08-s" target="_blank" rel="noopener noreferrer" aria-label="Visit Jagadeesh Sappa's GitHub profile" className="underline hover:text-white transition-colors underline-offset-4 decoration-1">GitHub</a>
+            <a href="https://linkedin.com/in/jagadeesh-sappa" target="_blank" rel="noopener noreferrer" aria-label="Visit Jagadeesh Sappa's LinkedIn profile" className="underline hover:text-white transition-colors underline-offset-4 decoration-1">LinkedIn</a>
           </div>
         </div>
         

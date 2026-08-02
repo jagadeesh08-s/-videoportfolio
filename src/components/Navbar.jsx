@@ -27,6 +27,8 @@ const Navbar = () => {
 
   return (
     <nav 
+      aria-label="Primary Navigation"
+      role="navigation"
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         isOpen 
           ? 'bg-[#ff2a2a] py-4'
@@ -39,7 +41,7 @@ const Navbar = () => {
         
         {/* Left Side: Logo/Name */}
         <div className="flex items-center">
-          <a href="#" className="text-white text-2xl font-black tracking-tight">
+          <a href="#" aria-label="Jagadeesh Sappa — Back to Top" className="text-white text-2xl font-black tracking-tight">
             Jagadeesh<span className="text-red-500">.</span>
           </a>
         </div>

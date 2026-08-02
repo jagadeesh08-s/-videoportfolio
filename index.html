@@ -6,11 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
+    <!-- Preconnect & DNS-Prefetch for Speed Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+
     <!-- Primary SEO Meta Tags -->
     <title>Jagadeesh Sappa | ECE Engineer &amp; Quantum Computing Developer</title>
     <meta name="title" content="Jagadeesh Sappa | ECE Engineer &amp; Quantum Computing Developer" />
     <meta name="description" content="Official portfolio of Jagadeesh Sappa — Electronics &amp; Communication Engineer, Quantum Computing Developer (1st Place Winner AQVH 2025), and Full-Stack Developer. Explore Bloch Verse, embedded systems, and full-stack projects." />
-    <meta name="keywords" content="Jagadeesh Sappa, Quantum Computing, Bloch Verse, Qiskit, OpenQASM 2.0, ECE, Electronics and Communication Engineering, VLSI Design, FPGA, Embedded Systems, Power Electronics, Full Stack Developer, React, Node.js, Python, BVC College of Engineering, Amaravathi Quantum Valley Hackathon, Web Saga, Portfolio" />
+    <meta name="keywords" content="Jagadeesh Sappa, Quantum Computing Developer, Bloch Verse, Qiskit, OpenQASM 2.0, ECE Engineer, Electronics and Communication Engineering, VLSI Design, FPGA Architecture, Embedded Systems, Power Electronics, Full Stack Developer, React, Node.js, Python, BVC College of Engineering, Amaravathi Quantum Valley Hackathon Winner, Web Saga, Portfolio" />
     <meta name="author" content="Jagadeesh Sappa" />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="theme-color" content="#ff2a2a" />
@@ -48,7 +54,7 @@
     <!-- Search Engine Verification -->
     <meta name="google-site-verification" content="google1721b21b61a51ff1" />
 
-    <!-- JSON-LD Structured Data Schema (Person & Portfolio) -->
+    <!-- JSON-LD Structured Data Schema (Person, Projects, Publications, Skills, Portfolio) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -106,11 +112,37 @@
           ]
         },
         {
+          "@type": "SoftwareApplication",
+          "@id": "https://jagagadeeshportfolio.vercel.app/#bloch-verse",
+          "name": "Bloch Verse",
+          "applicationCategory": "DeveloperApplication",
+          "operatingSystem": "Web, Cross-platform",
+          "description": "Quantum state visualizer built with Qiskit, simulating quantum circuits with real-time statevector extraction and interactive Bloch sphere visualization.",
+          "author": {
+            "@id": "https://jagagadeeshportfolio.vercel.app/#person"
+          },
+          "keywords": "Quantum Computing, Qiskit, OpenQASM 2.0, Bloch Sphere, IBM Quantum"
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "@id": "https://jagagadeeshportfolio.vercel.app/#research-paper",
+          "headline": "Quantum State Visualization Framework Using Qiskit and 3D Statevector Simulation",
+          "description": "Published peer-reviewed paper on quantum state visualization framework — Qiskit-based simulation pipeline with 3D visualization for superposition, phase, and entanglement states.",
+          "author": {
+            "@id": "https://jagagadeeshportfolio.vercel.app/#person"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "APSHES Journal"
+          },
+          "datePublished": "2025"
+        },
+        {
           "@type": "WebSite",
           "@id": "https://jagagadeeshportfolio.vercel.app/#website",
           "url": "https://jagagadeeshportfolio.vercel.app/",
           "name": "Jagadeesh Sappa | Portfolio",
-          "description": "Portfolio of Jagadeesh Sappa showcasing quantum computing visualizers, embedded electronics, and modern web applications.",
+          "description": "Official portfolio of Jagadeesh Sappa showcasing quantum computing visualizers, embedded electronics, and modern web applications.",
           "publisher": {
             "@id": "https://jagagadeeshportfolio.vercel.app/#person"
           },
