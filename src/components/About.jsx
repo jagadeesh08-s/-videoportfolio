@@ -28,8 +28,10 @@ const About = () => {
               <div className="w-full aspect-[3/4] overflow-hidden rounded-xl bg-gray-800 border-2 border-transparent">
                 <img 
                   src={stackImage} 
-                  alt="Jagadeesh Sappa" 
+                  alt="Jagadeesh Sappa — Electronics and Communication Engineering & Quantum Developer" 
                   className="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               {/* Name Badge Below Image */}
@@ -84,19 +86,25 @@ const About = () => {
             <img 
               data-aos="zoom-in" data-aos-delay="300"
               src={reactImage} 
-              alt="React" 
+              alt="React.js Frontend Development Library" 
+              loading="lazy"
+              decoding="async"
               className="w-20 h-20 md:w-24 md:h-24 object-contain hover:scale-110 transition-transform duration-300 cursor-pointer drop-shadow-2xl" 
             />
             <img 
               data-aos="zoom-in" data-aos-delay="450"
               src={nodeImage} 
-              alt="Node.js" 
+              alt="Node.js Server Runtime Environment" 
+              loading="lazy"
+              decoding="async"
               className="w-20 h-20 md:w-24 md:h-24 object-contain hover:scale-110 transition-transform duration-300 cursor-pointer drop-shadow-2xl" 
             />
             <img 
               data-aos="zoom-in" data-aos-delay="600"
               src={mongoImage} 
-              alt="MongoDB" 
+              alt="MongoDB Document Database" 
+              loading="lazy"
+              decoding="async"
               className="w-20 h-20 md:w-24 md:h-24 object-contain hover:scale-110 transition-transform duration-300 cursor-pointer drop-shadow-2xl" 
             />
           </div>
