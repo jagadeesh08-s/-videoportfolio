@@ -3,7 +3,8 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://jagagadeeshportfolio.vercel.app
+Host: https://jagadeeshsappaportfolio.vercel.app
 
 # Sitemap
-Sitemap: https://jagagadeeshportfolio.vercel.app/sitemap.xml
+Sitemap: https://jagadeeshsappaportfolio.vercel.app/sitemap.xml
+

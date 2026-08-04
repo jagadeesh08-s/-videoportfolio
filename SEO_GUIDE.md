@@ -5,10 +5,10 @@ This guide outlines all implemented SEO configurations and step-by-step instruct
 ---
 
 ## 🌐 Live Production Identity
-- **Website URL**: [https://jagagadeeshportfolio.vercel.app/](https://jagagadeeshportfolio.vercel.app/)
-- **Sitemap**: [https://jagagadeeshportfolio.vercel.app/sitemap.xml](https://jagagadeeshportfolio.vercel.app/sitemap.xml)
-- **Robots.txt**: [https://jagagadeeshportfolio.vercel.app/robots.txt](https://jagagadeeshportfolio.vercel.app/robots.txt)
-- **Open Graph Social Banner**: [https://jagagadeeshportfolio.vercel.app/og-image.svg](https://jagagadeeshportfolio.vercel.app/og-image.svg)
+- **Website URL**: [https://jagadeeshsappaportfolio.vercel.app/](https://jagadeeshsappaportfolio.vercel.app/)
+- **Sitemap**: [https://jagadeeshsappaportfolio.vercel.app/sitemap.xml](https://jagadeeshsappaportfolio.vercel.app/sitemap.xml)
+- **Robots.txt**: [https://jagadeeshsappaportfolio.vercel.app/robots.txt](https://jagadeeshsappaportfolio.vercel.app/robots.txt)
+- **Open Graph Social Banner**: [https://jagadeeshsappaportfolio.vercel.app/og-image.svg](https://jagadeeshsappaportfolio.vercel.app/og-image.svg)
 
 ---
 
@@ -46,23 +46,23 @@ Your portfolio is optimized for these search queries:
 Google uses external backlinks from trusted platforms to verify your authority:
 
 ### 1. LinkedIn
-- **Profile Contact Info**: Set Website URL to `https://jagagadeeshportfolio.vercel.app/`
+- **Profile Contact Info**: Set Website URL to `https://jagadeeshsappaportfolio.vercel.app/`
 - **Featured Section**: Add a link to your portfolio with description: *"Official portfolio showcasing Bloch Verse, quantum circuit visualizers, and full-stack projects."*
 
 ### 2. GitHub
-- **Profile Settings**: Add `https://jagagadeeshportfolio.vercel.app/` to your profile website.
+- **Profile Settings**: Add `https://jagadeeshsappaportfolio.vercel.app/` to your profile website.
 - **Repository**: On [github.com/jagadeesh08-s/-videoportfolio](https://github.com/jagadeesh08-s/-videoportfolio), set the **About / Website** field to the live URL.
 
 ### 3. Medium / Dev.to Project Article
 Write a short 3-minute post:
 > **Title**: *How I Built Bloch Verse: A Real-Time Quantum State Visualizer using Qiskit*  
 > **Body**: Explain the circuit simulation, statevector extraction, and link:  
-> *"You can explore the interactive live project on my [portfolio](https://jagagadeeshportfolio.vercel.app/)."*
+> *"You can explore the interactive live project on my [portfolio](https://jagadeeshsappaportfolio.vercel.app/)."*
 
 ---
 
 ## 📊 Useful Verification & Testing Tools
 - **Google Search Console**: [https://search.google.com/search-console](https://search.google.com/search-console)
-- **Google Rich Results Test**: [https://search.google.com/test/rich-results](https://search.google.com/test/rich-results)
+- **Google Rich Results Test**: [https://google.com/search/docs/appearance/structured-data/rich-results-test](https://search.google.com/search/docs/appearance/structured-data/rich-results-test)
 - **PageSpeed Insights**: [https://pagespeed.web.dev/](https://pagespeed.web.dev/)
 - **OpenGraph Social Preview Inspector**: [https://www.opengraph.xyz/](https://www.opengraph.xyz/)

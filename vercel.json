@@ -1,6 +1,13 @@
 {
   "routes": [
     {
+      "src": "/google1721b21b61a51ff1.html",
+      "headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "public, max-age=0, must-revalidate"
+      }
+    },
+    {
       "src": "/sitemap.xml",
       "headers": {
         "Content-Type": "application/xml; charset=utf-8",
