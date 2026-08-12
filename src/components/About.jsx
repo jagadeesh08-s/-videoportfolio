@@ -54,7 +54,7 @@ const About = () => {
           </p>
 
           <p className="text-base font-medium mb-6 leading-relaxed max-w-3xl text-red-100">
-            I won <span className="text-black font-bold">1st Place</span> at the Amaravathi Quantum Valley Hackathon 2025 (AQVH) — competing among 120+ teams nationally — where I built <span className="text-black font-bold">Bloch Verse</span>, a quantum state visualizer using Qiskit and OpenQASM 2.0. I'm also a published researcher with a peer-reviewed paper on quantum state visualization in the APSHES Journal, 2025.
+            I won <span className="text-black font-bold">1st Place</span> at the Amaravathi Quantum Valley Hackathon 2025 (AQVH) — competing among 120+ teams nationally — where I built <span className="text-black font-bold">Bloch Verse</span>, a quantum state visualizer using Qiskit and OpenQASM 2.0. I'm also the author of a distributed research preprint: <a href="https://papers.ssrn.com/abstract=7200684" target="_blank" rel="noopener noreferrer" className="text-black font-bold underline hover:text-white transition-colors">"Quantum State Visualizer: An Interactive Tool for Multi-Qubit System Analysis Using Partial Trace and Bloch Sphere Representation" (SSRN 7200684)</a>.
           </p>
 
           <p className="text-base font-medium mb-8 leading-relaxed max-w-3xl text-red-100">

@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { motion, useScroll, useSpring, useMotionValueEvent } from 'framer-motion';
 
-const TagCard = ({ number, title, text, techStack, className, aosDelay, aosType, pathLength, containerRef }) => {
+const TagCard = ({ number, title, text, techStack, link, linkText, className, aosDelay, aosType, pathLength, containerRef }) => {
   const ref = useRef(null);
   const [isActive, setIsActive] = useState(false);
 
@@ -57,23 +57,38 @@ const TagCard = ({ number, title, text, techStack, className, aosDelay, aosType,
           {text}
         </p>
 
-        {/* Tech Stack Tags */}
-        {techStack && (
-          <div className="flex flex-wrap gap-2 mt-auto">
-            {techStack.map((tech, i) => (
-              <span 
-                key={i}
-                className={`text-[10px] font-bold px-2.5 py-1 rounded-full transition-colors duration-700 ${
-                  isActive 
-                    ? 'bg-white/20 text-white border border-white/30' 
-                    : 'bg-gray-200 text-gray-600 border border-gray-300'
-                }`}
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-        )}
+        {/* Tech Stack & Link */}
+        <div className="mt-auto flex flex-col gap-3">
+          {techStack && (
+            <div className="flex flex-wrap gap-2">
+              {techStack.map((tech, i) => (
+                <span 
+                  key={i}
+                  className={`text-[10px] font-bold px-2.5 py-1 rounded-full transition-colors duration-700 ${
+                    isActive 
+                      ? 'bg-white/20 text-white border border-white/30' 
+                      : 'bg-gray-200 text-gray-600 border border-gray-300'
+                  }`}
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          )}
+          {link && (
+            <a 
+              href={link} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className={`text-xs font-bold inline-flex items-center gap-1.5 hover:underline transition-colors duration-700 ${
+                isActive ? 'text-white' : 'text-[#ff2a2a]'
+              }`}
+            >
+              <span>{linkText || 'View Document'}</span>
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+            </a>
+          )}
+        </div>
       </div>
     </div>
   );
@@ -217,9 +232,11 @@ const Services = () => {
 
           <TagCard 
             number="03"
-            title="Research Paper"
-            text="Published peer-reviewed paper on quantum state visualization framework — Qiskit-based simulation pipeline with 3D visualization for superposition, phase, and entanglement states. APSHES Journal, 2025."
-            techStack={["Qiskit", "3D Visualization", "Statevector", "Research"]}
+            title="SSRN Research Preprint"
+            text="Quantum State Visualizer: An Interactive Tool for Multi-Qubit System Analysis Using Partial Trace and Bloch Sphere Representation. Distributed SSRN Preprint (Abstract ID: 7200684)."
+            techStack={["SSRN 7200684", "Partial Trace", "Bloch Sphere", "Multi-Qubit"]}
+            link="https://papers.ssrn.com/abstract=7200684"
+            linkText="View SSRN Paper 7200684"
             className="md:absolute md:top-[700px] md:right-[5%] lg:right-[15%] rotate-1 md:rotate-3"
             aosType="fade-left"
             aosDelay="300"

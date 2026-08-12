@@ -111,8 +111,8 @@ const Hero = () => {
               <p className="text-xs text-gray-400 font-medium">Quantum Gates Simulated</p>
             </div>
             <div>
-              <p className="text-2xl md:text-3xl font-black text-white">Published</p>
-              <p className="text-xs text-gray-400 font-medium">APSHES Journal 2025</p>
+              <p className="text-2xl md:text-3xl font-black text-white">SSRN 7200684</p>
+              <p className="text-xs text-gray-400 font-medium">Distributed Preprint</p>
             </div>
           </div>
 
