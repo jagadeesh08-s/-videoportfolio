@@ -96,18 +96,6 @@ const Hero = () => {
             </a>
           </div>
 
-          {/* Quick Metrics */}
-          <div 
-            data-aos="fade-up"
-            data-aos-delay="400"
-            className="flex items-center gap-6 mt-12 pt-8 border-t border-white/10 w-full max-w-lg"
-          >
-            <div>
-              <p className="text-2xl md:text-3xl font-black text-white">1st Place</p>
-              <p className="text-xs text-gray-400 font-medium">Amaravathi Quantum Valley Hackathon 2025</p>
-            </div>
-          </div>
-
         </div>
 
         {/* Right Side: Profile Showcase Card (5 Columns) */}
