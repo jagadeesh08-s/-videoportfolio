@@ -100,19 +100,11 @@ const Hero = () => {
           <div 
             data-aos="fade-up"
             data-aos-delay="400"
-            className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-white/10 w-full max-w-lg"
+            className="flex items-center gap-6 mt-12 pt-8 border-t border-white/10 w-full max-w-lg"
           >
             <div>
-              <p className="text-2xl md:text-3xl font-black text-white">1st</p>
-              <p className="text-xs text-gray-400 font-medium">AQVH 2025 Hackathon</p>
-            </div>
-            <div>
-              <p className="text-2xl md:text-3xl font-black text-white">9,000+</p>
-              <p className="text-xs text-gray-400 font-medium">Quantum Gates Simulated</p>
-            </div>
-            <div>
-              <p className="text-2xl md:text-3xl font-black text-white">SSRN 7200684</p>
-              <p className="text-xs text-gray-400 font-medium">Distributed Preprint</p>
+              <p className="text-2xl md:text-3xl font-black text-white">1st Place</p>
+              <p className="text-xs text-gray-400 font-medium">Amaravathi Quantum Valley Hackathon 2025</p>
             </div>
           </div>
 
