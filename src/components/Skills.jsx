@@ -56,7 +56,9 @@ const achievements = [
     icon: "📄",
     title: "SSRN Research Preprint",
     subtitle: "SSRN eLibrary · Abstract 7200684",
-    description: "Quantum State Visualizer: An Interactive Tool for Multi-Qubit System Analysis Using Partial Trace and Bloch Sphere Representation."
+    description: "Quantum State Visualizer: An Interactive Tool for Multi-Qubit System Analysis Using Partial Trace and Bloch Sphere Representation.",
+    link: "https://papers.ssrn.com/abstract=7200684",
+    linkText: "Read on SSRN"
   }
 ];
 
@@ -123,12 +125,25 @@ const Skills = () => {
               key={index}
               data-aos="fade-up"
               data-aos-delay={index * 100}
-              className="bg-[#111111] border border-white/10 rounded-2xl p-6 hover:border-[#ff2a2a]/40 hover:shadow-[0_10px_30px_rgba(255,42,42,0.1)] transition-all duration-500 group"
+              className="bg-[#111111] border border-white/10 rounded-2xl p-6 hover:border-[#ff2a2a]/40 hover:shadow-[0_10px_30px_rgba(255,42,42,0.1)] transition-all duration-500 group flex flex-col justify-between"
             >
-              <span className="text-3xl mb-4 block">{item.icon}</span>
-              <h4 className="text-lg font-black text-white mb-1 group-hover:text-[#ff2a2a] transition-colors">{item.title}</h4>
-              <p className="text-xs text-white/40 font-bold mb-3 uppercase tracking-wider">{item.subtitle}</p>
-              <p className="text-sm text-white/60 leading-relaxed font-medium">{item.description}</p>
+              <div>
+                <span className="text-3xl mb-4 block">{item.icon}</span>
+                <h4 className="text-lg font-black text-white mb-1 group-hover:text-[#ff2a2a] transition-colors">{item.title}</h4>
+                <p className="text-xs text-white/40 font-bold mb-3 uppercase tracking-wider">{item.subtitle}</p>
+                <p className="text-sm text-white/60 leading-relaxed font-medium mb-4">{item.description}</p>
+              </div>
+              {item.link && (
+                <a 
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#ff2a2a] hover:underline transition-colors mt-auto"
+                >
+                  <span>{item.linkText}</span>
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                </a>
+              )}
             </div>
           ))}
         </div>
