@@ -54,9 +54,9 @@ const achievements = [
   },
   {
     icon: "📄",
-    title: "Research Publication",
-    subtitle: "APSHES Journal · 2025",
-    description: "Peer-reviewed paper on quantum state visualization framework and Qiskit pipeline."
+    title: "SSRN Research Preprint",
+    subtitle: "SSRN eLibrary · Abstract 7200684",
+    description: "Quantum State Visualizer: An Interactive Tool for Multi-Qubit System Analysis Using Partial Trace and Bloch Sphere Representation."
   }
 ];
 
