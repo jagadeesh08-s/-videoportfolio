@@ -26,15 +26,6 @@ const Hero = () => {
         
         {/* Left Side: Hero Text & Information (7 Columns) */}
         <div className="lg:col-span-7 flex flex-col items-start text-left">
-          
-          {/* Badge */}
-          <div 
-            data-aos="fade-down"
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#ff2a2a]/10 border border-[#ff2a2a]/30 text-[#ff4d4d] text-xs md:text-sm font-bold mb-6 backdrop-blur-md shadow-[0_0_15px_rgba(255,42,42,0.15)]"
-          >
-            <span className="w-2 h-2 rounded-full bg-[#ff2a2a] animate-ping"></span>
-            🏆 1st Place Winner — AQVH 2025
-          </div>
 
           {/* Main Heading */}
           <h1 
