@@ -1,58 +1,81 @@
-import React from 'react';
-
 const Footer = () => {
+  const year = new Date().getFullYear()
+
   return (
-    <footer role="contentinfo" className="bg-[#111111] text-[#d4d4d4] py-16 px-6 md:px-12 w-full font-mono text-[10px] md:text-xs tracking-widest flex flex-col justify-between min-h-[50vh]">
-      
-      {/* Top Row */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 w-full font-medium">
-        <div className="flex flex-col gap-1">
-          <p>ECE & Quantum Computing</p>
-          <p>Full-Stack Development</p>
-          <p>Embedded Systems & VLSI</p>
-        </div>
-        
-        <div className="flex flex-col gap-1 md:items-center">
-          <p>B.Tech — BVC College, Rajahmundry</p>
-          <a href="#services" className="underline hover:text-white transition-colors mt-1 underline-offset-4 decoration-1">View Projects</a>
-        </div>
-        
-        <div className="flex flex-col gap-1 md:items-end">
-          <p>East Godavari, Andhra Pradesh</p>
-          <p>{new Date().getFullYear()}</p>
-        </div>
-      </div>
-
-      {/* Middle Huge Text */}
-      <div className="w-full flex justify-center items-center py-20 md:py-24 overflow-hidden">
-        <h2 className="text-[18vw] md:text-[16vw] leading-none font-sans font-bold tracking-tighter lowercase select-none text-[#f4f4f4] w-full text-center">
-          jagadeesh
-        </h2>
-      </div>
-
-      {/* Bottom Row */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 w-full items-end font-medium">
-        <div className="flex flex-col gap-6">
-          <a href="#contact" className="underline hover:text-white transition-colors underline-offset-4 decoration-1 font-bold">Contact</a>
-          <p className="text-white/60 font-mono text-[9px] md:text-[10px]">
-            &copy; {new Date().getFullYear()} Jagadeesh Sappa | Built with React
-          </p>
-        </div>
-        
-        <div className="flex flex-col gap-2 md:items-center">
-          <a href="mailto:sappsjagadeesh@gmail.com" className="underline hover:text-white transition-colors underline-offset-4 decoration-1 lowercase">sappsjagadeesh@gmail.com</a>
-          <div className="flex gap-4 mt-2">
-            <a href="https://github.com/jagadeesh08-s" target="_blank" rel="noopener noreferrer" aria-label="Visit Jagadeesh Sappa's GitHub profile" className="underline hover:text-white transition-colors underline-offset-4 decoration-1">GitHub</a>
-            <a href="https://linkedin.com/in/jagadeesh-sappa" target="_blank" rel="noopener noreferrer" aria-label="Visit Jagadeesh Sappa's LinkedIn profile" className="underline hover:text-white transition-colors underline-offset-4 decoration-1">LinkedIn</a>
+    <footer role="contentinfo" className="bg-deep text-paper/70">
+      <div className="mx-auto max-w-7xl px-5 py-16 md:px-10 md:py-20">
+        <div className="grid gap-10 border-b border-white/10 pb-12 md:grid-cols-3">
+          <div className="space-y-1 text-sm">
+            <p>ECE &amp; Quantum Computing</p>
+            <p>Full-Stack Development</p>
+            <p>Embedded Systems &amp; VLSI</p>
+          </div>
+          <div className="space-y-1 text-sm md:text-center">
+            <p>B.Tech — BVC College, Rajahmundry</p>
+            <a href="#services" className="inline-block underline underline-offset-4 transition-colors hover:text-paper">
+              View Projects
+            </a>
+          </div>
+          <div className="space-y-1 text-sm md:text-right">
+            <p>East Godavari, Andhra Pradesh</p>
+            <p>{year}</p>
           </div>
         </div>
-        
-        <div className="flex flex-col gap-1 md:items-end">
-          <span className="text-white/40 text-[9px]">+91-9912493997</span>
+
+        <div className="overflow-hidden py-14 md:py-16">
+          <p className="font-display text-center text-[16vw] font-extrabold leading-none tracking-tighter text-paper/90 lowercase select-none md:text-[14vw]">
+            jagadeesh
+          </p>
+        </div>
+
+        <div className="grid gap-8 border-t border-white/10 pt-10 text-sm md:grid-cols-3 md:items-end">
+          <div>
+            <a href="#contact" className="font-semibold text-paper underline underline-offset-4">
+              Contact
+            </a>
+            <p className="mt-3 font-mono-meta text-[10px] tracking-wider text-paper/40">
+              © {year} Jagadeesh Sappa
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-2 md:items-center">
+            <a
+              href="mailto:sappsjagadeesh@gmail.com"
+              className="underline underline-offset-4 transition-colors hover:text-paper"
+            >
+              sappsjagadeesh@gmail.com
+            </a>
+            <div className="flex gap-5">
+              <a
+                href="https://github.com/jagadeesh08-s"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub profile"
+                className="underline underline-offset-4 transition-colors hover:text-paper"
+              >
+                GitHub
+              </a>
+              <a
+                href="https://linkedin.com/in/jagadeesh-sappa"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn profile"
+                className="underline underline-offset-4 transition-colors hover:text-paper"
+              >
+                LinkedIn
+              </a>
+            </div>
+          </div>
+
+          <div className="md:text-right">
+            <a href="tel:+919912493997" className="font-mono-meta text-xs text-paper/45 transition-colors hover:text-paper">
+              +91-9912493997
+            </a>
+          </div>
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

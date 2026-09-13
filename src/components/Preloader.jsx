@@ -1,18 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useEffect, useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const Preloader = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    // Wait for the water fill animation (1.5s) + a small pause (0.5s)
-    // before the shutter goes up smoothly.
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2200);
-    
-    return () => clearTimeout(timer);
-  }, []);
+    const timer = setTimeout(() => setIsLoading(false), 1800)
+    return () => clearTimeout(timer)
+  }, [])
+
+  useEffect(() => {
+    document.body.style.overflow = isLoading ? 'hidden' : ''
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isLoading])
 
   return (
     <AnimatePresence>
@@ -20,36 +22,34 @@ const Preloader = () => {
         <motion.div
           key="preloader"
           initial={{ y: 0 }}
-          exit={{ y: "-100%" }}
-          transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
-          className="fixed inset-0 w-full h-screen bg-[#ff2a2a] z-[100000] flex items-center justify-center"
+          exit={{ y: '-100%' }}
+          transition={{ duration: 0.95, ease: [0.76, 0, 0.24, 1] }}
+          className="fixed inset-0 z-[100000] flex items-center justify-center overflow-hidden bg-deep"
+          aria-hidden={!isLoading}
         >
-          {/* Logo Container */}
-          <motion.div 
-            exit={{ opacity: 0, scale: 0.95, y: -20 }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
-            className="relative text-5xl md:text-7xl font-black tracking-tighter"
-          >
-            {/* Background text (empty state) */}
-            <div className="text-red-900/30">
-              Jagadeesh<span className="text-red-900/30">.</span>
-            </div>
+          <div className="absolute inset-0 atm-grid opacity-40" />
+          <div className="absolute -left-24 top-1/4 h-72 w-72 rounded-full bg-signal/25 blur-3xl animate-drift" />
+          <div className="absolute -right-16 bottom-1/4 h-64 w-64 rounded-full bg-emerald-900/30 blur-3xl animate-drift" />
 
-            {/* Foreground text (water fill state) */}
-            <motion.div 
-              className="absolute top-0 left-0 text-white overflow-hidden whitespace-nowrap"
+          <motion.div
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.35 }}
+            className="relative font-display text-5xl font-extrabold tracking-tight text-paper md:text-7xl"
+          >
+            <span className="text-white/20">Jagadeesh</span>
+            <motion.span
+              className="absolute inset-0 overflow-hidden whitespace-nowrap text-paper"
               initial={{ clipPath: 'inset(100% 0 0 0)' }}
               animate={{ clipPath: 'inset(0% 0 0 0)' }}
-              transition={{ duration: 1.6, ease: "easeInOut", delay: 0.2 }}
+              transition={{ duration: 1.25, ease: 'easeInOut', delay: 0.15 }}
             >
-              Jagadeesh<span className="text-black">.</span>
-            </motion.div>
+              Jagadeesh<span className="text-signal">.</span>
+            </motion.span>
           </motion.div>
-
         </motion.div>
       )}
     </AnimatePresence>
-  );
-};
+  )
+}
 
-export default Preloader;
+export default Preloader
