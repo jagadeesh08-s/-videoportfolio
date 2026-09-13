@@ -1,109 +1,123 @@
-import { useEffect, useState } from 'react'
-
-const navLinks = [
-  { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Projects', href: '#services' },
-  { label: 'Contact', href: '#contact' },
-]
+import React, { useState, useEffect } from 'react';
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
+  // Handle scroll to make navbar more solid
   useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 40)
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-  useEffect(() => {
-    document.body.style.overflow = isOpen ? 'hidden' : ''
-    return () => {
-      document.body.style.overflow = ''
-    }
-  }, [isOpen])
+  const navLinks = [
+    { label: 'Home', href: '#' },
+    { label: 'About', href: '#about' },
+    { label: 'Skills', href: '#skills' },
+    { label: 'Projects', href: '#services' },
+    { label: 'Contact', href: '#contact' }
+  ];
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        isOpen
-          ? 'bg-deep text-paper'
-          : isScrolled
-            ? 'border-b border-ink/10 bg-mist/90 text-ink backdrop-blur-md'
-            : 'bg-transparent text-paper'
+    <nav 
+      aria-label="Primary Navigation"
+      role="navigation"
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        isOpen 
+          ? 'bg-[#ff2a2a] py-4'
+          : isScrolled 
+            ? 'bg-[#0a0a0a]/90 backdrop-blur-md border-b border-white/10 py-3 shadow-xl' 
+            : 'bg-transparent py-6'
       }`}
     >
-      <nav aria-label="Primary" className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-10 md:py-5">
-        <a
-          href="#hero"
-          className={`font-display text-xl font-extrabold tracking-tight md:text-2xl ${
-            isOpen || !isScrolled ? 'text-paper' : 'text-ink'
-          }`}
-        >
-          Jagadeesh<span className="text-signal">.</span>
-        </a>
+      <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
+        
+        {/* Left Side: Logo/Name */}
+        <div className="flex items-center">
+          <a href="#" aria-label="Jagadeesh Sappa — Back to Top" className="text-white text-2xl font-black tracking-tight">
+            Jagadeesh<span className="text-red-500">.</span>
+          </a>
+        </div>
 
-        <div className="hidden items-center gap-9 md:flex">
+        {/* Center: Desktop Menu Links */}
+        <div className="hidden md:flex space-x-8">
           {navLinks.map((link) => (
-            <a
-              key={link.label}
+            <a 
+              key={link.label} 
               href={link.href}
-              className={`relative text-sm font-semibold tracking-wide transition-colors after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full ${
-                isScrolled ? 'text-ink/70 hover:text-ink' : 'text-paper/80 hover:text-paper'
-              }`}
+              className="text-white/80 hover:text-white font-medium relative group transition-colors duration-300"
             >
               {link.label}
+              {/* Smooth hover underline */}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
             </a>
           ))}
-          <a href="#contact" className="btn-primary text-sm">
+        </div>
+
+        {/* Right Side: CTA Button */}
+        <div className="hidden md:block">
+          <a 
+            href="#contact" 
+            className="px-6 py-2.5 rounded-full bg-white/10 border border-white/20 text-white font-semibold hover:bg-white/20 hover:shadow-[0_0_15px_rgba(255,255,255,0.2)] transition-all duration-300 backdrop-blur-md"
+          >
             Hire Me
           </a>
         </div>
 
-        <button
-          type="button"
-          className={`md:hidden ${isOpen || !isScrolled ? 'text-paper' : 'text-ink'}`}
-          aria-expanded={isOpen}
-          aria-controls="mobile-nav"
-          aria-label={isOpen ? 'Close menu' : 'Open menu'}
-          onClick={() => setIsOpen((prev) => !prev)}
-        >
-          <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            {isOpen ? (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-            ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-            )}
-          </svg>
-        </button>
-      </nav>
-
-      <div
-        id="mobile-nav"
-        className={`md:hidden overflow-hidden border-t border-white/10 bg-deep transition-all duration-300 ${
-          isOpen ? 'max-h-[420px] opacity-100' : 'max-h-0 opacity-0'
-        }`}
-      >
-        <div className="flex flex-col gap-1 px-5 py-4">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              onClick={() => setIsOpen(false)}
-              className="border-b border-white/10 py-3 font-display text-lg font-semibold text-paper"
-            >
-              {link.label}
-            </a>
-          ))}
-          <a href="#contact" onClick={() => setIsOpen(false)} className="btn-primary mt-4 text-center">
-            Hire Me
-          </a>
+        {/* Mobile Hamburger Menu Icon */}
+        <div className="md:hidden flex items-center">
+          <button 
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-white focus:outline-none p-2"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {isOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
         </div>
       </div>
-    </header>
-  )
-}
 
-export default Navbar
+      {/* Mobile Slide-Down Menu */}
+      <div 
+        className={`md:hidden absolute top-full left-0 w-full transition-all duration-300 overflow-hidden ${
+          isOpen ? 'max-h-96 py-4 opacity-100 bg-[#ff2a2a] shadow-2xl' : 'max-h-0 opacity-0 bg-transparent'
+        }`}
+      >
+        <div className="flex flex-col px-6 space-y-4">
+          {navLinks.map((link) => (
+            <a 
+              key={link.label} 
+              href={link.href}
+              onClick={() => setIsOpen(false)}
+              className="text-white hover:text-black font-bold text-lg border-b border-white/20 pb-2 transition-colors"
+            >
+              {link.label}
+            </a>
+          ))}
+          <div className="pt-4 pb-2">
+             <a 
+               href="#contact" 
+               onClick={() => setIsOpen(false)} 
+               className="inline-block px-6 py-3 rounded-full bg-white text-[#ff2a2a] font-black hover:bg-black hover:text-white transition-colors w-full text-center shadow-lg"
+             >
+               Hire Me
+             </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
